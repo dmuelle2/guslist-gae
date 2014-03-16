@@ -1,0 +1,51 @@
+/** Add css rules here for your application. */
+
+
+/** Example rules used by the template application (remove for your app) */
+.appTitleBar {
+  font-size: 5em;
+  font-weight: bold;
+  color: #777777;
+  margin: 5px 0px 10px;
+  text-align: center;
+}
+
+.gwt-PopupPanel {
+   border: 3px solid #000000;
+   padding: 3px;
+   background: white;
+}
+
+.gwt-PopupPanelGlass {
+   background-color: #000;
+   opacity: 0.3;
+   filter: alpha(opacity=70);
+}
+
+.gwt-PopupPanel .popupContent {
+   border: solid gray;
+   padding: 3px;
+   background: lavender;	
+}   
+
+.search-button-row {
+	margin-top: 10px;
+}
+
+.search-button-row  .gwt-Button{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.postLabel {
+	margin: 10px 10px;
+}
+
+.postInfoButton {
+	
+}
+
+/** Set ids using widget.getElement().setId("idOfElement") */
+#closeButton {
+  margin: 15px 6px 6px;
+}

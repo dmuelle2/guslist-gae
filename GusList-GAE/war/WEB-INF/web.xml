@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee">
+
+  <!-- Servlets -->
+   <servlet>
+    <servlet-name>blobServlet</servlet-name>
+    <servlet-class>edu.gac.mcs270.hvidsten.guslistgae.server.BlobServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>blobServlet</servlet-name>
+    <url-pattern>/guslist/blobservice</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>submitPostHTTPServlet</servlet-name>
+    <servlet-class>edu.gac.mcs270.hvidsten.guslistgae.server.SubmitPostHTTPServiceImpl</servlet-class>
+  </servlet>
+  
+   <servlet-mapping>
+     <servlet-name>submitPostHTTPServlet</servlet-name> 
+     <url-pattern>/guslist/uploadservice</url-pattern>
+   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>clientModelServlet</servlet-name>
+    <servlet-class>edu.gac.mcs270.hvidsten.guslistgae.server.ClientModelServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>clientModelServlet</servlet-name>
+    <url-pattern>/guslist/clientmodelservice</url-pattern>
+  </servlet-mapping>
+  
+<servlet>
+<servlet-name>LoginService</servlet-name>
+<servlet-class>edu.gac.mcs270.hvidsten.guslistgae.server.LoginService</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>LoginService</servlet-name>
+<url-pattern>/guslist/loginservice</url-pattern>
+</servlet-mapping>
+  
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>GusListWelcome.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>
+
