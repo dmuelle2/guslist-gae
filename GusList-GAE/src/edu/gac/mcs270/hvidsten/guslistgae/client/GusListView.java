@@ -543,11 +543,11 @@ public class GusListView {
 	}
 
 	public void sendSuccessfulDeleteMessage() {
-		
-	}
+		Window.alert("Post was deleted successfully");
+	}  
 
 	public void sendErrorMessage(String msg) {
-		Window.alert(msg);
+		Window.alert(msg);  
 	}
 
 	public void setWindow(String url) {

@@ -43,7 +43,10 @@ public class BlobServiceImpl extends RemoteServiceServlet implements
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp)
       throws ServletException, IOException {
-        BlobKey blobKey = new BlobKey(req.getParameter("blob-key"));
+	    //  Need to trim the key, as a carriage return "\n" is added
+	    //  by BlobStore - okay for Eclipse development mode, not ok for app-engine
+	    //  Bug fix from http://stackoverflow.com/questions/12382300/app-engine-java-blobstore-no-blobinfo-after-successfully-storing-blob
+        BlobKey blobKey = new BlobKey(req.getParameter("blob-key").trim());
         blobstoreService.serve(blobKey, resp);
   }
 }

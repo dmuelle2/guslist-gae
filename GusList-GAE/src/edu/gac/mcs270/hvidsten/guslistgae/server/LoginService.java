@@ -27,12 +27,11 @@ public class LoginService extends HttpServlet {
 			// If there is a User currently logged in to their Google account,
 			//  re-direct the returned url to the main GusList page. 
 			resp.setStatus(HttpServletResponse.SC_SEE_OTHER);
-		    resp.setHeader("Location", GusListModel.getAppBaseURL());  
+		    resp.setHeader("Location", "../GusList.html");  
 		} else {
 			//If there is no user currently logged in,
 			//  serve back to client the url for the Google login service. 
-			String logInLink = 
-					userService.createLoginURL(req.getRequestURI());
+			String logInLink = userService.createLoginURL("../GusList.html");
 			resp.setStatus(HttpServletResponse.SC_SEE_OTHER);
 		    resp.setHeader("Location", logInLink); 
 		}

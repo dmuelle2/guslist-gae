@@ -103,7 +103,7 @@ public class GusList implements EntryPoint {
 		clientModelService.deletePostFromDB(post, 
 				new AsyncCallback<List<PostData>>() {
 			public void onFailure(Throwable caught) {
-				return;
+				return;  
 			}
 			public void onSuccess(List<PostData> data) {
 				glView.sendSuccessfulDeleteMessage();

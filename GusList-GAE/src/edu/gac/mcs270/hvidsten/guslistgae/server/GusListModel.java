@@ -101,10 +101,20 @@ public class GusListModel {
 
 	public static void deletePost(PostData post) {
 		PersistenceManager pm = pmf.getPersistenceManager();
-		// Find the object in the datastore that matches the 
-		//  class and ID of the post. Then, delete it. 
-		pm.deletePersistent( pm.getObjectById(post.getClass(), 
-				post.getID() ) ); 
+		// Keep alterations in a Transaction, so records are locked until done
+		try {
+			pm.currentTransaction().begin();
+			// Find the object in the datastore that matches the 
+			//  class and ID of the post. Then, delete it. 
+			pm.deletePersistent( pm.getObjectById(PostData.class, post.getID() ) );
+			pm.currentTransaction().commit();
+		}
+		finally {
+		    if (pm.currentTransaction().isActive())
+		      pm.currentTransaction().rollback();
+		    if (!pm.isClosed())
+		      pm.close();
+		   }
 	}
 	
 	// Getters and setters of globally needed values
